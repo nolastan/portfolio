@@ -1,0 +1,86 @@
+@mixin transition($property, $speed){
+  -moz-transition: $property $speed;
+  -webkit-transition: $property $speed;
+  -o-transition: $property $speed;
+}
+
+@mixin gradient_inverse($color, $amount: 3%) {
+	background-image: linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -o-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -moz-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -webkit-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -ms-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -webkit-gradient(linear, left bottom, left top, lighten($color, $amount), darken($color, $amount));
+}
+@mixin gradient($color, $amount: 3%) {
+	background-image: linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -o-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -moz-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -webkit-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -ms-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -webkit-gradient(linear, left bottom, left top, darken($color, $amount), lighten($color, $amount));
+}
+
+@mixin shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+	-moz-box-shadow: $x $y $width $color;
+	-webkit-box-shadow: $x $y $width $color; 
+	box-shadow: $x $y $width $color;
+}
+
+@mixin inner-shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+	-moz-box-shadow: inset $x $y $width $color;
+	-webkit-box-shadow: inset $x $y $width $color; 
+	box-shadow: inset $x $y $width $color;
+}
+
+
+@mixin rounded-corner($radius){
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;	
+}
+
+
+
+.social li{
+	display:inline-block;
+	margin: .5em 0;
+}
+.social img{
+	margin: 2px;
+	opacity: .7;
+}
+.social li a:hover img{
+	opacity: 1;
+}
+
+.projects{
+	li{
+		font-size: 70%;
+		margin: 0;
+		margin-bottom: 2em;
+		h4{
+			font-weight:bold;
+			margin-top:.7em;
+			margin-bottom:0;
+		}
+		p{
+			margin:0;
+		}
+		a{
+			img{
+				border: 1px solid #ccc;
+				opacity: .9;
+				@include transition(opacity, .5s);
+			}
+		}
+		a:hover{
+			img{
+				border: 1px solid #aaa;
+				opacity: 1;
+			}			
+		}
+		p{
+			margin:0;
+		}
+	}
+}

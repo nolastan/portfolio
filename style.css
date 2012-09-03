@@ -1,0 +1,32 @@
+.social li {
+  display: inline-block;
+  margin: .5em 0; }
+
+.social img {
+  margin: 2px;
+  opacity: .7; }
+
+.social li a:hover img {
+  opacity: 1; }
+
+.projects li {
+  font-size: 70%;
+  margin: 0;
+  margin-bottom: 2em; }
+  .projects li h4 {
+    font-weight: bold;
+    margin-top: .7em;
+    margin-bottom: 0; }
+  .projects li p {
+    margin: 0; }
+  .projects li a img {
+    border: 1px solid #ccc;
+    opacity: .9;
+    -moz-transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s; }
+  .projects li a:hover img {
+    border: 1px solid #aaa;
+    opacity: 1; }
+  .projects li p {
+    margin: 0; }
